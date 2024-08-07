@@ -9,17 +9,18 @@ def minOperations(n):
 
     # all outputs should be at least 2 char
     if (n < 2):
-        return 0  # If n is less than 2, no operations are needed
-
-    ops, root = 0, 2  # Initialize operations count and root for division check
-    while root <= n:  # Loop until root is greater than n
+        return 0
+    # Initialize operations count and root for division check
+    ops, root = 0, 2
+    # Loop until root is greater than n  
+    while root <= n:
         if n % root == 0:
             # total even-divisions by root = total operations
-            ops += root  # Add root to operations count
-            
+            ops += root 
+            # Add root to operations count
             n = n / root  # Update n to reflect division
-            
-            root -= 1  # Decrement root to check for smaller factors
-            
-        root += 1  # Increment root to find next potential factor
-    return ops  # Return the total number of operations needed
+            # Decrement root to check for smaller factors
+            root -= 1
+            # Increment root to find next potential factor
+        root += 1 
+    return ops
